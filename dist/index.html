@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dummy MQTT Devices</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>html, body, h1, h2, h3, h4, h5 {
+  font-family: Raleway, sans-serif;
+}
+
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index: 4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">Smart Garden</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index: 3; width: 300px" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <img src="/flower.3b0bf043.png" class="w3-circle w3-margin-right" style="width: 46px">
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome</span><br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-microchip fa-fw"></i>  Irrigator</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-microchip fa-fw"></i>  Sensors</a>
+
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor: pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-top: 43px; margin-left: 300px">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top: 22px">
+    <h5><b><i class="fa fa-microchip"></i>Irrigator</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-play w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Start Irrigator</h4>
+        <button type="button" id="irrigatorStart">Start Irrigator</button>
+		<p id="respStart"></p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-dashboard w3-xxxlarge"></i></div>
+        <div class="w3-right">
+         
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Slow Irrigator</h4>
+        <button type="button" id="irrigatorSlow">Slow Irrigator</button>
+		<p id="respSlow"></p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-dashboard w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Fast Irrigator</h4>
+        <button type="button" id="irrigatorFast">Fast Irrigator</button>
+		<p id="respFast"></p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-orange w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-pause w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Stop Irrigator</h4>
+        <button type="button" id="irrigatorStop">Stop Irrigator</button>
+		<p id="respStop"></p>
+      </div>
+    </div>
+
+	
+  
+
+
+
+
+  </div>
+
+
+
+  <header class="w3-container" style="padding-top: 22px">
+    <h5><b><i class="fa fa-microchip"></i>Sensors</b></h5>
+  </header>
+
+  <div class="w3-row-padding w3-margin-bottom">
+
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-play w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Start Temperature Sensor</h4>
+        <button type="button" id="tempSensor">Start Temperature Sensor</button>
+
+		<p id="respTemp"> </p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-pause w3-xxxlarge"></i></div>
+        <div class="w3-right">
+         
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Stop Temperature Sensor </h4>
+        <button type="button" id="tempSensorStop">Stop Temperature Sensor</button>
+		<p id="respTempStop"> </p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-container w3-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-play w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Start Air Sensor</h4>
+        <button type="button" id="airSensor">Start Air Sensor </button>
+
+		<p id="respAir"> </p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-container w3-white w3-text-black w3-padding-16">
+        <div class="w3-left"><i class="fa fa-pause w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Stop Air Sensor</h4>
+        <button type="button" id="airSensorStop">Stop Air Sensor </button>
+		<p id="respAirStop"> </p>
+      </div>
+    </div>
+
+ <header class="w3-container" style="padding-top: 22px">
+    <h5><b></b></h5>
+  </header>
+
+  <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-play w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Start Water Sensor</h4>
+        <button type="button" id="waterSensor">Start Water Sensor</button>
+
+		<p id="respWater"> </p>
+      </div>
+    </div>
+
+  
+  <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-pause w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Stop Water Sensor</h4>
+        <button type="button" id="waterSensorStop">Stop Water Sensor</button>
+		<p id="respWaterStop"> </p>
+      </div>
+    </div>
+
+  <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-play w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Start Humidity sensor</h4>
+        <button type="button" id="soilMoistureSensor">Start Humidity Sensor</button>
+		<p id="respSoilMoisture"> </p>
+      </div>
+    </div>
+
+  <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-pause w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Stop Humidity sensor</h4>
+        <button type="button" id="soilMoistureSensorStop">Stop Humidity Sensor</button>
+		<p id="respSoilMoistureStop"> </p>
+      </div>
+    </div>
+
+	<header class="w3-container" style="padding-top: 22px">
+		<h5><b></b></h5>
+	  </header>
+	<div class="w3-large">
+		<div class="w3-container w3-orange w3-text-white w3-padding-16">
+		  <div class="w3-left"><i class="fa fa-list w3-xxxlarge"></i></div>
+		  <div class="w3-right">
+			
+		  </div>
+		  <div class="w3-clear"></div>
+		  <button type="button" id="devicesGet">Get the List of devices</button>
+		  <p id="respGet"></p>
+		  <textarea name="list of devices" id="devicesList" cols="40" rows="20"></textarea>
+		</div>
+	  </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    <h4>Copyright ©-All rights are reserved</h4>
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+    if (mySidebar.style.display === "block") {
+        mySidebar.style.display = "none";
+        overlayBg.style.display = "none";
+    } else {
+        mySidebar.style.display = "block";
+        overlayBg.style.display = "block";
+    }
+}
+// Close the sidebar with the close button
+function w3_close() {
+    mySidebar.style.display = "none";
+    overlayBg.style.display = "none";
+}
+
+</script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/index.8cfc62b9.js" defer=""></script>
+</body>
+</html>
