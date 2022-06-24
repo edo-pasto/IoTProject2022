@@ -55,5 +55,5 @@ curl -G -X GET \
   -H 'fiware-servicepath: /'
 ```
 ## Links
-- [Link to slides](http://localhost:1234)
+- [Link to slides](https://docs.google.com/presentation/d/1BhPzEq-YJq3efu1GjbcVTcOQYL6FCbnO0Kj4zKJh1Hg/edit?usp=sharing)
 - [Link to video](http://localhost:1234)
