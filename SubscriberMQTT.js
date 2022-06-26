@@ -60,6 +60,16 @@ else if(topic === '/db/soilMoistureSensor'){
     console.log(`A row has been inserted with rowid ${this.lastID}`);
   });
 }
+else if(topic === '/db/irrigator'){
+  let jsonObj = JSON.parse(message)
+  db.run(`INSERT INTO Irrigator(State, Pressure ) VALUES(?,?)`, jsonObj['state'], jsonObj['pressure'], function(err) {
+    if (err) {
+      return console.log(err.message);
+    }
+    // get the last insert id
+    console.log(`A row has been inserted with rowid ${this.lastID}`);
+  });
+}
 
 });
 

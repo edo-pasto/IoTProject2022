@@ -27,7 +27,7 @@ let s=createServer(
                 // the client publish a new message
                 console.log(JSON.stringify(message))
                 client.publish('/ul/4jggokgpepnvsb2uv4s40d59ov/irrigator002/attrs', mex);
-                
+                client.publish('/db/irrigator', JSON.stringify(message))               
                 setTimeout(stopping, 30000)
                 
                 
@@ -46,6 +46,7 @@ let s=createServer(
                 // the client publish a new message
                 console.log(JSON.stringify(message))
                 client.publish('/ul/4jggokgpepnvsb2uv4s40d59ov/irrigator002/attrs', mex);
+                client.publish('/db/irrigator', JSON.stringify(message))
                 setTimeout(stopping, 45000)
                 
             }
@@ -62,7 +63,7 @@ let s=createServer(
                 // the client publish a new message
                 console.log(JSON.stringify(message))
                 client.publish('/ul/4jggokgpepnvsb2uv4s40d59ov/irrigator002/attrs', mex);
-
+                client.publish('/db/irrigator', JSON.stringify(message))
                 setTimeout(stopping, 15000)
                 
             }
@@ -78,12 +79,9 @@ let s=createServer(
                 console.log('Irrigator send state and pressure...');
                 // the client publish a new message
                 client.publish('/ul/4jggokgpepnvsb2uv4s40d59ov/irrigator002/attrs', mex);
+                client.publish('/db/irrigator', JSON.stringify(message))
                 console.log(JSON.stringify(message))
-                
-
                 console.log("Stopping Irrigator");
-                res.write('Stopping Irrigator')
-               
                 setTimeout(stop, 3000)
             }
         }

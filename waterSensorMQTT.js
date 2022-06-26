@@ -17,21 +17,21 @@ var client = mqtt.connect('mqtt://127.0.0.1', settings);
 client.subscribe('/ul/4jggokgpepnvsb2uv4s40d59ov/waterSensor001/attrs')
 
 function sendMessage(){
-let date =  new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
-let salinity = Math.floor(Math.random() * (30000 - 100 + 1)) + 100
-let salinityType = ''
-let sodium = Math.floor(Math.random() * 30);
-let sodiumType = ''
+  let date =  new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+  let salinity = Math.floor(Math.random() * (30000 - 100 + 1)) + 100
+  let salinityType = ''
+  let sodium = Math.floor(Math.random() * 30);
+  let sodiumType = ''
 
-if(salinity>=100 && salinity <= 250){
-    salinityType = 'Low'
-  }else if(salinity >= 251 && salinity <= 750){
-    salinityType = 'Medium'
-  }else if(salinity >= 751 && salinity <= 2250){
-    salinityType = 'High'
-  }else if(salinity >= 2251 && salinity <= 30000){
-    salinityType = 'Very High'
-  }
+  if(salinity>=100 && salinity <= 250){
+      salinityType = 'Low'
+    }else if(salinity >= 251 && salinity <= 750){
+      salinityType = 'Medium'
+    }else if(salinity >= 751 && salinity <= 2250){
+      salinityType = 'High'
+    }else if(salinity >= 2251 && salinity <= 30000){
+      salinityType = 'Very High'
+    }
 
   if(sodium>=0 && sodium <= 10){
     sodiumType = 'Low'
@@ -59,7 +59,7 @@ if(salinity>=100 && salinity <= 250){
     // the client publish a new message
     client.publish('/ul/4jggokgpepnvsb2uv4s40d59ov/waterSensor001/attrs', mex);
     client.publish('/db/waterSensor', JSON.stringify(message))
-    // client.publish('IOT22')
+
 }
 
 // fired when new message is received

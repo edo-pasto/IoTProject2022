@@ -511,9 +511,9 @@ const { send  } = require("process");
 // const app = express()
 // const cors = require('cors')
 // app.use(cors());
+// ----------------- AIR SENSOR ------------------
 let airsensor = document.querySelector("#airSensor");
 let airsensorStop = document.querySelector("#airSensorStop");
-let airSensorDelete = document.querySelector("#airSensorDelete");
 let respAirStart = document.getElementById("respAir");
 airsensor.onclick = (e)=>{
     axios.get("http://localhost:8082/airSensor002/start").then((response)=>{
@@ -536,6 +536,7 @@ airsensorStop.onclick = (e)=>{
     resAirStop.innerText = "Air Sensor succesfully stopped";
     respAirStart.innerText = "";
 };
+// ------------------ TEMPERATURE SENSOR --------------------
 let tempSensor = document.querySelector("#tempSensor");
 let tempSensorStop = document.querySelector("#tempSensorStop");
 let respTempStart = document.getElementById("respTemp");
@@ -560,6 +561,7 @@ tempSensorStop.onclick = (e)=>{
     resTempStop.innerText = "Temperature Sensor succesfully stopped";
     respTempStart.innerText = "";
 };
+// ----------------- WATER SENSOR -----------------
 let waterSensor = document.querySelector("#waterSensor");
 let waterSensorStop = document.querySelector("#waterSensorStop");
 let respWaterStart = document.getElementById("respWater");
@@ -584,6 +586,7 @@ waterSensorStop.onclick = (e)=>{
     resWaterStop.innerText = "Water Sensor succesfully stopped";
     respWaterStart.innerText = "";
 };
+// -------------- SOIL MOISTURE SENSOR --------------
 let soilMoistureSensor = document.querySelector("#soilMoistureSensor");
 let soilMoistureSensorStop = document.querySelector("#soilMoistureSensorStop");
 let resSoilMoistureStart = document.getElementById("respSoilMoisture");
@@ -606,6 +609,7 @@ soilMoistureSensorStop.onclick = (e)=>{
     });
     resSoilMoistureStop.innerText = "Soil Moisture Sensor succesfully stopped";
 };
+// ----------------- IRRIGATOR -----------------
 let irrigatorStart = document.querySelector("#irrigatorStart");
 let irrigatorSlow = document.querySelector("#irrigatorSlow");
 let irrigatorFast = document.querySelector("#irrigatorFast");
@@ -647,10 +651,11 @@ irrigatorStop.onclick = (e)=>{
         console.log("Stopping Irrigator");
     }).catch((error)=>{
         console.error(error);
-        respStop.innerText = "Irrigator is already inactive";
+        respStop.innerText = "Irrigator is inactive";
     });
     respStop.innerText = "Irrigator succesfully stopped";
 };
+// ---------- LIST OF DEVICES -----------
 let respGet = document.getElementById("respGet");
 let devicesList = document.getElementById("devicesList");
 devicesGet.onclick = (e)=>{

@@ -8,9 +8,10 @@ const { send } = require("process");
 // const cors = require('cors')
 // app.use(cors());
 
+
+// ----------------- AIR SENSOR ------------------
 let airsensor = document.querySelector('#airSensor')
 let airsensorStop = document.querySelector('#airSensorStop')
-let airSensorDelete = document.querySelector('#airSensorDelete')
 let respAirStart = document.getElementById('respAir')
 airsensor.onclick = e => {
     axios.get("http://localhost:8082/airSensor002/start")
@@ -42,7 +43,7 @@ airsensorStop.onclick = e => {
     respAirStart.innerText = "";
 };
 
-
+// ------------------ TEMPERATURE SENSOR --------------------
 let tempSensor = document.querySelector('#tempSensor')
 let tempSensorStop = document.querySelector('#tempSensorStop')
 let respTempStart = document.getElementById('respTemp')
@@ -75,7 +76,7 @@ tempSensorStop.onclick = e => {
 };
 
 
-
+// ----------------- WATER SENSOR -----------------
 let waterSensor = document.querySelector('#waterSensor')
 let waterSensorStop = document.querySelector('#waterSensorStop')
 let respWaterStart = document.getElementById('respWater')
@@ -108,8 +109,7 @@ waterSensorStop.onclick = e => {
 };
 
 
-
-
+// -------------- SOIL MOISTURE SENSOR --------------
 let soilMoistureSensor = document.querySelector('#soilMoistureSensor')
 let soilMoistureSensorStop = document.querySelector('#soilMoistureSensorStop')
 
@@ -143,7 +143,7 @@ soilMoistureSensorStop.onclick = e => {
     
 };
 
-
+// ----------------- IRRIGATOR -----------------
 let irrigatorStart = document.querySelector('#irrigatorStart')
 let irrigatorSlow = document.querySelector('#irrigatorSlow')
 let irrigatorFast = document.querySelector('#irrigatorFast')
@@ -199,11 +199,13 @@ irrigatorStop.onclick = e => {
     })
     .catch(error => {
         console.error(error)
-        respStop.innerText = 'Irrigator is already inactive'
+        respStop.innerText = 'Irrigator is inactive'
     })
     respStop.innerText = 'Irrigator succesfully stopped'
 };
 
+
+// ---------- LIST OF DEVICES -----------
 let respGet = document.getElementById('respGet')
 let devicesList = document.getElementById('devicesList')
 devicesGet.onclick = e => {
