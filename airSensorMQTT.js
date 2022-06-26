@@ -2,7 +2,6 @@
 const {createServer} = require('http')
 const {parse} = require('url')
 const url = require('url')
-const weather='/home'
 const headers={"Content-Type" : "application/json"}
 var mqtt = require('mqtt');
  
