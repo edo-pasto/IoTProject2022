@@ -5,7 +5,13 @@ PASTORINO EDOARDO,
 Matricola: 5169595, 
 
 Internet Of Things
-
+## Requirements
+Download and install Docker ([https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/))
+Download and install Node.js ([https://nodejs.org/it/download/](https://nodejs.org/it/download/))
+Download and install DB Browser for Sqlite ([https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/))
+```bash
+npm install parcel axios mqtt http sqlite3
+```
 ## Start the project
 
 For starting the MQTT Broker, the Orion Context Broker and the IoT agent of Fiware we have to run the following command in the prompt in the directory of the project: 
@@ -55,5 +61,5 @@ curl -G -X GET \
   -H 'fiware-servicepath: /'
 ```
 ## Links
-- [Link to slides](https://docs.google.com/presentation/d/1BhPzEq-YJq3efu1GjbcVTcOQYL6FCbnO0Kj4zKJh1Hg/edit?usp=sharing)
-- [Link to video](http://localhost:1234)
+#### - [Link to slides](https://docs.google.com/presentation/d/1BhPzEq-YJq3efu1GjbcVTcOQYL6FCbnO0Kj4zKJh1Hg/edit?usp=sharing)
+#### - [Link to video](https://youtu.be/qKlqAGDvZIM)
