@@ -55,7 +55,7 @@ node SubscriberMQTT.js
 For getting the data of device we have to use curl, for example for the waterSensor:
 ```bash
 curl -G -X GET \
-  'http://localhost:1026/v2/entities/urn:ngsi-ld:waterSensor:001' \
+  'http://localhost:1026/v2/entities/urn:ngsi-ld:WaterSensor:001' \
   -d 'type=Sensor' \
   -H 'fiware-service: openiot' \
   -H 'fiware-servicepath: /'
